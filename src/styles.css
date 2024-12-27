@@ -174,7 +174,15 @@ h6 {
     font-size: 2em;
     line-height: 1.4; }
   h2 {
-    font-size: 1.5em; } }
+    font-size: 1.5em; }
+    #demo-header .left {
+      margin-top: 8px !important;
+    }
+  #demo-header .left h1 span {
+    font-size: 0.72em !important;
+  }
+
+  }
 
 sub {
   font-size: 0.8em;
@@ -2327,12 +2335,12 @@ button,
 		float: left;
 		height: 0.6em;
 		line-height: 0.15em;
-		margin: 0 0.3em 0 0.25em;
+		margin: 4.5px 0.5em 0 0.3em;
 		display: inline-block;
 		color: #fff;
 	}
 	#demo-header h1 span {
-		font-size: .28em;
+		font-size: .42em;
 	}
 	#demo-header .left .selector {
 		float: left;
@@ -2348,12 +2356,12 @@ button,
 		overflow: hidden;
 	}
 
-	body.dark #demo-header .selector li.active {
+  #demo-header .selector li.active {
 		border-color: #676d79;
 		background: #676d79;
 	}
 	
-	body.dark #demo-header .selector li, body.dark #demo-header .share {
+	#demo-header .selector li, #demo-header .share {
 		border-color: #575d69;
 	}
 	ul.selector li.active {
@@ -2382,7 +2390,7 @@ button,
 		border-top-width: 1px;
 		border-bottom-width: 1px;
 	}
-	body.dark #demo-header .selector li, body.dark #demo-header .share {
+ #demo-header .selector li, #demo-header .share {
 		border-color: #575d69;
 	}
 	
@@ -2416,10 +2424,10 @@ button,
     list-style: none;
 	}
 	
-body.dark #demo-header .alt2 {
+#demo-header .alt2 {
     border-color: #575d69;
 }
-body.dark #demo-header .alt2:hover {
+ #demo-header .alt2:hover {
 	color: #e7746f !important;
 	border-color: #e7746f !important;
 }

@@ -30,7 +30,7 @@ export default function Header() {
         <header id="demo-header">
             <div className="left"> 
                 <h1>
-                    <span>Massively</span>
+                    <span>Editorial</span>
                 </h1>
                 <ul className={`selector ${!isVisible ? 'none' : ''}`}>
                     <li className="active">Desktop</li>
