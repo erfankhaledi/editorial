@@ -1,6 +1,8 @@
 # Editorial
 
 **Editorial** is a modern web application built using JavaScript and React JS. This platform is designed to provide users with a seamless and interactive editorial experience, enabling them to explore, create, and share captivating content.
+![editorial](https://github.com/user-attachments/assets/57017da8-437e-467a-a1e9-16241e40603e)
+
 
 ## Features
 
