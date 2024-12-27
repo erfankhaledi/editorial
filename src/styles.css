@@ -2100,6 +2100,12 @@ button,
     #header {
       padding-top: 5em; } }
   @media screen and (max-width: 736px) {
+    #demo-header .right .action .back {
+      display: none !important;
+    }
+    #demo-header .right .share {
+      display: none !important;
+    }
     #header {
       padding-top: 6.5em; }
       #header .logo {
