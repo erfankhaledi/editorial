@@ -2020,7 +2020,7 @@ button,
           font-size: 1.5rem; }
       #sidebar.inactive {
         margin-left: -24em;
-        margin-top: 45px !important;
+        ;
       } }
   @media screen and (max-width: 1280px) {
     #sidebar {
