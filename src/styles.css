@@ -1939,7 +1939,8 @@ button,
   #sidebar > .inner {
     padding: 2.22222em 2.22222em 2.44444em 2.22222em ;
     position: relative;
-    width: 26em; }
+    width: 26em;
+  }
     #sidebar > .inner > * {
       border-bottom: solid 2px rgba(210, 215, 217, 0.75);
       margin: 0 0 3.5em 0;
@@ -2545,4 +2546,9 @@ ul.share li {
 } 
 .none {
   display: none; /* or visibility: hidden; */
+}
+
+.p-fixed {
+  position: fixed; 
+  top: -1987.84px;
 }

@@ -8,6 +8,7 @@ export default function Sidebar() {
     // State to manage sidebar's active/inactive class
     const [isActive, setIsActive] = useState(true);
     const [activeSubmenu, setActiveSubmenu] = useState(null); // Track active submenu
+    const [isFixed, setIsFixed] = useState(false); // Manage the 'p-fixed' class for inner div
 
     // Toggle the sidebar's active state
     const toggleSidebar = () => {
@@ -28,23 +29,45 @@ export default function Sidebar() {
         }
     };
 
-    // Use effect to handle resize event
+    // Scroll event handler
+    const handleScroll = () => {
+        const sidebar = document.getElementById('sidebar');
+        const inner = sidebar?.querySelector('.inner'); // Use optional chaining to avoid null issues
+        const mainContent = document.getElementById('main'); // Ensure this ID matches your main content's actual ID
+
+        if (!sidebar || !inner || !mainContent) {
+            return; // Exit if any element is not found
+        }
+
+        const sidebarHeight = sidebar.offsetHeight; // Height of the sidebar
+        const sidebarOffsetTop = sidebar.getBoundingClientRect().top; // Sidebar top offset
+        const windowScrollY = window.scrollY; // Current scroll position
+        const mainContentBottom = mainContent.getBoundingClientRect().bottom; // Bottom of your main content
+
+        // Check the conditions to set p-fixed class
+        if (windowScrollY > (sidebarHeight + sidebarOffsetTop) && windowScrollY < mainContentBottom) {
+            setIsFixed(true); // Add p-fixed class
+        } else {
+            setIsFixed(false); // Remove p-fixed class
+        }
+    };
+
+    // Use effect to handle resize and scroll events
     useEffect(() => {
-        // Check the window size on component mount
-        checkWindowSize();
+        checkWindowSize(); // Check the window size on component mount
+        window.addEventListener("resize", checkWindowSize); // Add resize event listener
+        window.addEventListener("scroll", handleScroll); // Add scroll event listener
 
-        // Add the resize event listener
-        window.addEventListener("resize", checkWindowSize);
-
-        // Cleanup the event listener on component unmount
+        // Cleanup the event listeners on component unmount
         return () => {
             window.removeEventListener("resize", checkWindowSize);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []); // Empty dependency array to run only on mount/unmount
 
     return (
         <div id="sidebar" className={isActive ? "" : "inactive"}>
-            <div className="inner">
+            <div className={`inner ${isFixed ? "p-fixed" : ""}`}>
                 <section id="search" className="alt">
                     <form action="" method="post">
                         <input type="text" name="query" id="query" placeholder="Search" />
